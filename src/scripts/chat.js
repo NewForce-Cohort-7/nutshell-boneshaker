@@ -1,6 +1,6 @@
 // Created by Kiersten White
 
-import { getMessages, deleteMessage } from "./dataAccessChat.js";
+import { getMessages, deleteMessage } from "./dataAccess.js";
 
 const mainContainer = document.querySelector("#dashboard")
 

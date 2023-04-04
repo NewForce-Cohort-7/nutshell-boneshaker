@@ -1,6 +1,6 @@
 // Created by Kiersten White
 
-import { sendMessage } from "./dataAccessChat.js" //needs to change to dataAccess.js before being pushed up
+import { sendMessage } from "./dataAccess.js" //needs to change to dataAccess.js before being pushed up
 
 // Creates data for the Chat Form area, including some HTML styling using Bootstrap
 export const ChatForm = () => {
