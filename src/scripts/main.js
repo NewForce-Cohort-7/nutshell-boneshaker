@@ -1,10 +1,10 @@
 import { Nutshell } from "./Nutshell.js"
+import { fetchTasks } from "./dataAccess.js"
 
+export const dashboard = document.querySelector("#dashboard")
 
-const dashboard = document.querySelector("#dashboard")
-
-const render = () => {
-    fetchRequests()
+export const render = () => {
+    fetchTasks()
     .then(() => {
             dashboard.innerHTML = Nutshell()
             
@@ -13,4 +13,3 @@ const render = () => {
 }
 
 render()
-
