@@ -1,4 +1,4 @@
-import { getEvents, saveEvent, deleteEvent } from "./dataaccess.js";
+import { getEvents, saveEvent, deleteEvent } from "./dataacess.js";
 
 const mainContainer = document.querySelector("#dashboard")
 
