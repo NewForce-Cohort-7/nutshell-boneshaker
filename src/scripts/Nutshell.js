@@ -4,7 +4,6 @@ import { Messages } from "./chat.js";
 
 export const Nutshell = () => {
       return `
-      
       <article id="chatMessages">
             <section id="chatForm">
                   <h2>Send a message!</h2>

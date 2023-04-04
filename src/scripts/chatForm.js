@@ -4,6 +4,10 @@ import { sendMessage } from "./dataAccess.js" //needs to change to dataAccess.js
 
 // Creates data for the Chat Form area, including some HTML styling using Bootstrap
 export const ChatForm = () => {
+
+    let formValidation = () => {
+        if ()
+    }
     let html = `
         <div class="mb-3">
             <label for="username" class="form-label">Username:</label>
