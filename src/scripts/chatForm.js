@@ -7,11 +7,11 @@ export const ChatForm = () => {
     let html = `
         <div class="mb-3">
             <label for="username" id="username" class="form-label">Username:</label>
-            <input type="text" name="username" class="form-control" id="usernameInput" placeholder="purplemonkey34">
+            <input type="text" name="username" class="form-control" placeholder="purplemonkey34">
         </div>
         <div class="mb-3">
             <label for="chatMessage" id="chatMessage" class="form-label" >Type your message here:</label>
-            <input type="text" name="chatMessage" class="form-control" id="chatMessageInput" placeholder="What r u doing 2nite xD">
+            <input type="text" name="chatMessage" class="form-control" placeholder="What r u doing 2nite xD">
         </div>
         <button class="button" id="submitMessage">Send Message</button>
     `
