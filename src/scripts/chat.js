@@ -18,6 +18,8 @@ export const Messages = () => {
     const convertMessageToListElement = (messageObject) => {
         return `<p><strong>${messageObject.username}</strong>: ${messageObject.chatMessage}
 
+        <button class="chatReaction" id="likeButton"> <img src="https://i.imgur.com/HS6WZjX.png" alt="like button" width="20" height="20" /> </button>
+        <button class="chatReaction" id="dislikeButton"> <img src="https://i.imgur.com/p15UCJm.png" alt="dislike button" width="20" height="20" /> </button>
         <button class="deleteMessage" id="message--${messageObject.id}"> Delete </button></p>
         
         `
