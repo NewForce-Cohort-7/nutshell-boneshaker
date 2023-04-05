@@ -1,10 +1,15 @@
 import { Nutshell } from "./Nutshell.js"
 import { fetchMessages } from "./dataAccess.js"
-import { fetchArticles } from "./dataAccess.js"
 
 const dashboard = document.querySelector("#dashboard")
 
-const render = () => {
+export const render = () => {
+    fetchTasks()
+    .then(
+        () => {
+            dashboard.innerHTML = Nutshell()
+        }
+    )
     fetchMessages()
     .then(() => {
             dashboard.innerHTML = Nutshell()
