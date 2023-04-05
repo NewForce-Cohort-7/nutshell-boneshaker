@@ -2,7 +2,8 @@
 
 export const applicationState = {
     messages: [],
-    tasks: []
+    tasks: [],
+    tasksToComplete: []
 }
 
 const dashboard = document.querySelector("#dashboard")
@@ -99,21 +100,21 @@ export const fetchTasks = () => {
   
   // Completions functions: fetchCompletions, getCompletions, sendCompletion
   
-  export const fetchCompletions = () => {
-    return fetch(`${API}/completions`)
+  export const fetchTaskToComplete = () => {
+    return fetch(`${API}/tasksToComplete`)
         .then(response => response.json())
         .then(
             (completedTasks) => {
-                applicationState.Completions = completedTasks
+                applicationState.tasksToComplete = completedTasks
             }
         )
   }
   
-  export const getCompletions = () => {
-    return applicationState.completions.map(completion => ({...completion}))
+  export const getTaskToComplete = () => {
+    return applicationState.tasksToComplete.map(completion => ({...completion}))
   }
   
-  export const sendCompletion = (completion) => {
+  export const sendTaskToComplete = (completion) => {
     const fetchCompletions = {
         method: "POST",
         headers: {
@@ -121,7 +122,7 @@ export const fetchTasks = () => {
         },
         body: JSON.stringify(completion)
     }
-    return fetch(`${API}/completions`, fetchCompletions)
+    return fetch(`${API}/tasksToComplete`, fetchCompletions)
       .then(response => response.json())
       .then(() => {
           dashboard.dispatchEvent(new CustomEvent("stateChanged"))
