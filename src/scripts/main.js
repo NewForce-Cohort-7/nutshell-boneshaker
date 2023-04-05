@@ -1,5 +1,5 @@
 import { Nutshell } from "./Nutshell.js"
-import { fetchMessages, fetchTasks, fetchImages } from "./dataAccess.js"
+import { fetchMessages, fetchTasks, fetchArticle } from "./dataAccess.js"
 
 const dashboard = document.querySelector("#dashboard")
 
@@ -16,11 +16,13 @@ export const render = () => {
             
         }
     )
-    fetchImages()
-    .then(() => {
-            dashboard.innerHTML = Nutshell()
-    })
-}
+    fetchArticle() 
+    .then(
+         () => {
+                dashboard.innerHTML = Nutshell()
+       } 
+    )
+    }
 
 render()
 
@@ -30,3 +32,4 @@ dashboard.addEventListener(
         render()
     }
 )
+
