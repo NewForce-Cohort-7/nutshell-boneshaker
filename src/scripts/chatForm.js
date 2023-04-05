@@ -1,5 +1,4 @@
 // Created by Kiersten White
-
 import { sendMessage } from "./dataAccess.js" //needs to change to dataAccess.js before being pushed up
 
 // Creates data for the Chat Form area, including some HTML styling using Bootstrap
@@ -42,7 +41,3 @@ dashboard.addEventListener("click", clickEvent => {
 
     }
 })
-
-
-// Preproposal on 4/14 - one paragraph (3-4 sentences) - Slack them to all instructors(Sarah, Tommy, Jordan, Barry)
-// Character Tracker with randomizers?

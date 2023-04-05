@@ -3,7 +3,8 @@
 export const applicationState = {
     messages: [],
     tasks: [],
-    tasksToComplete: []
+    tasksToComplete: [],
+    images:[]
 }
 
 const dashboard = document.querySelector("#dashboard")
@@ -130,3 +131,48 @@ export const fetchTasks = () => {
   }
 
   ////----------------------------------------------------------------------------------////
+
+  // Created by Kiersten White
+
+// Exports function that fetches Images
+export const fetchImages = () => {
+    return fetch(`${API}/images`)
+    .then (response => response.json())
+    .then (
+        (Images) => {
+            applicationState.images = Images
+        }
+    )
+}
+
+//
+export const getImages = () => {
+    return applicationState.images.map(image => ({...image}))
+}
+
+//
+export const sendImage = (image) => {
+    const fetchOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(image)
+    }
+
+    return fetch(`${API}/images`, fetchOptions)
+    .then (response => response.json())
+    .then (() => {
+        dashboard.dispatchEvent(new CustomEvent("stateChanged"))
+    })
+}
+
+// Initiates the fetch request to Delete Image Submissions
+export const deleteImages = (id) => {
+    return fetch(`${API}/images/${id}`, { method: "DELETE" })
+        .then(
+            () => {
+                dashboard.dispatchEvent(new CustomEvent("stateChanged"))
+            }
+        )
+}
