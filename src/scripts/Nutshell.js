@@ -3,11 +3,16 @@ import { Messages } from "./chat.js";
 import { taskComponent } from "./task.js"
 import { ArticleForm }from "./articleForm.js"
 import { Article } from "./article.js"
+import { addImageForm } from "./imageForm.js";
+import { ImagesCard } from "./image.js";
 
 
 
 export const Nutshell = () => {
       return `
+      <article id="formButtons">
+            ${addImageForm()}
+      </article>
       ${taskComponent()}
       <article id="chatMessages">
             <section id="chatForm">
@@ -29,6 +34,10 @@ export const Nutshell = () => {
                   ${Messages()}
             </section>
       </article>
+      <article id="images">
+            ${ImagesCard()}
+      </article>
+
       `  
       // Render all your UI components here
 }

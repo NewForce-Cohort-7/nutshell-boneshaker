@@ -56,23 +56,3 @@ export const taskComponent = () => {
 
     return html
 }
-
-document.addEventListener(
-  'click',
-  (event) => {
-      if (event.target.id === "submitTask") {
-          fetchTasks()
-          const taskId = (applicationState.tasks.length + 1)
-          const taskName = document.querySelector("#taskName").value
-          const dueDate = document.querySelector("#dueDate").value
-
-
-          let dataToSendToAPI = {
-              id: [taskId],
-              taskName: [taskName],
-              dueDate: [dueDate]
-          }
-          sendTask(dataToSendToAPI)
-      }
-  }
-)
