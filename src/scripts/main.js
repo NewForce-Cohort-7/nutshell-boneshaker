@@ -3,7 +3,7 @@ import { fetchMessages, fetchTasks } from "./dataAccess.js"
 
 const dashboard = document.querySelector("#dashboard")
 
-const render = () => {
+export const render = () => {
     fetchTasks()
     .then(
         () => {
