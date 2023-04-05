@@ -1,5 +1,6 @@
 import { Nutshell } from "./Nutshell.js"
 import { fetchMessages } from "./dataAccess.js"
+import { fetchArticles } from "./dataAccess.js"
 
 const dashboard = document.querySelector("#dashboard")
 
@@ -20,3 +21,4 @@ dashboard.addEventListener(
         render()
     }
 )
+
