@@ -2,6 +2,7 @@ import { ChatForm } from "./chatForm.js";
 import { Messages } from "./chat.js";
 import { taskComponent } from "./task.js"
 import { ArticleForm }from "./articleForm.js"
+import { Article } from "./article.js"
 
 
 
@@ -14,9 +15,15 @@ export const Nutshell = () => {
                   ${ ChatForm()}
             </section>
             <p>
-            <Section id="articleForm">
+            <section id="articleForm">
             <h2>New Articles</h2>
                   ${ ArticleForm()}
+            </section>
+            <section id="currentArticles">
+            <h2>Article Feed</h2>
+                  ${ Article()}
+            </section>
+            <p>
             <section id="newMessages">
                   <h2>New Messages</h2>
                   ${Messages()}
