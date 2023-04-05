@@ -1,6 +1,5 @@
-// import { fetchTasks, getTasks, sendTask, deleteTask, fetchCompletions, getCompletions, sendCompletion } from taskForm.js
-
 export const applicationState = {
+    article: [],
     messages: [],
     tasks: [],
     tasksToComplete: []
@@ -21,14 +20,12 @@ export const fetchMessages = () => {
         }
     )
 }
-
-
 //
 export const getMessages = () => {
     return applicationState.messages.map(message => ({...message}))
 }
 
-//
+
 export const sendMessage = (message) => {
     const fetchOptions = {
         method: "POST",
@@ -44,10 +41,52 @@ export const sendMessage = (message) => {
         dashboard.dispatchEvent(new CustomEvent("stateChanged"))
     })
 }
-
 // Initiates the fetch request to Delete submitted messages
 export const deleteMessage = (id) => {
     return fetch(`${API}/messages/${id}`, { method: "DELETE" })
+        .then(
+            () => {
+                dashboard.dispatchEvent(new CustomEvent("stateChanged"))
+            }
+        )
+}
+//Article Functions by Kara
+
+
+// Exports function that fetches new articles
+export const fetchArticle = () => {
+    return fetch(`${API}/article`)
+    .then (response => response.json())
+    .then (
+        (articles) => {
+            applicationState.article = articles
+        }
+    )
+}
+// 
+export const getArticle = () => {
+    return applicationState.article.map(article => ({...article}))
+}
+
+export const saveArticle = (newArticle) => {
+    const fetchOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newArticle)
+    }
+
+    return fetch(`${API}/article`, fetchOptions)
+    .then (response => response.json())
+    .then (() => {
+        dashboard.dispatchEvent(new CustomEvent("stateChanged"))
+    })
+}
+
+// Initiates the fetch request to Delete ssaved articles
+export const deleteArticle = (id) => {
+    return fetch(`${API}/article/${id}`, { method: "DELETE" })
         .then(
             () => {
                 dashboard.dispatchEvent(new CustomEvent("stateChanged"))
