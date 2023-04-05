@@ -26,6 +26,8 @@ export const ArticleForm = () => {
      
     return html
 }
+const dashboard = document.querySelector("#dashboard")
+
  const articleForm = document.getElementById('article-form');
      articleForm.addEventListener('submit', saveArticle);
 
@@ -43,14 +45,12 @@ export const ArticleForm = () => {
             url: url,
             timestamp: timestamp
         }
-            sendMessage(dataToSendToAPI)
+        // Send the data to the API for permanent storage
+            sendArticle(dataToSendToAPI)
     
         }
-    }
-const dashboard = document.querySelector("#dashboard")
+    
 
-  // Send the data to the API for permanent storage
-  sendArticle(dataToSendToAPI)
 
-//   mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+
 

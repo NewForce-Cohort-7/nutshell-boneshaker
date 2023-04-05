@@ -1,5 +1,5 @@
 import { Nutshell } from "./Nutshell.js"
-import { fetchMessages } from "./dataAccess.js"
+import { fetchMessages, fetchTasks } from "./dataAccess.js"
 
 const dashboard = document.querySelector("#dashboard")
 

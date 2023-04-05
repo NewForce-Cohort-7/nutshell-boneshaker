@@ -1,4 +1,4 @@
-const applicationState = {
+export const applicationState = {
     messages: []
 }
 
