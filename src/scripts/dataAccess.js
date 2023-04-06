@@ -8,7 +8,7 @@ export const fetchEvents = () => {
         .then(response => response.json())
         .then(
             (eventInput) => {
-                // Store the external state in application state
+        
                 applicationState.events = eventInput
             }
         )
@@ -26,20 +26,7 @@ return fetch(`${API}/events`, fetchOptions)
         mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
     })
  }
-// export const saveCompletion = (completionObject) => {
-// const fetchOptions = {
-//     method: "POST",
-//     headers: {
-//         "Content-Type": "application/json"
-//     },
-//     body: JSON.stringify(completionObject)
-// }
-// //sends saveCompletion object to the API-JSON database
-// return fetch(`${API}/completions`, fetchOptions)
-//     .then(response => response.json())
-//     .then(() => {
-//         mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
-//     })}
+
 
 const dashboard = document.querySelector("#dashboard")
 
