@@ -7,7 +7,7 @@ import { Article } from "./article.js"
 import { addImageForm } from "./imageForm.js";
 import { ImagesCard } from "./image.js";
 import { Navbar } from "./navbar.js";
-import { eventForm } from "./event.js";
+import { eventForm, listOfEvents } from "./event.js";
 
 
 
@@ -22,7 +22,7 @@ export const Nutshell = () => {
                   ${addImageForm()}
                   </div>
                   <div class="col-3">
-                  ${events()}
+                  ${listOfEvents()}
                         Tasks Print Function Go Here
                   </div>
                   <div class="col-3">

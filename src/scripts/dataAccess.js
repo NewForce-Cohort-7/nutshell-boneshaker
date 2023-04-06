@@ -55,6 +55,9 @@ export const fetchMessages = () => {
     )
 }
 //
+export const getMessages = () => {
+    return applicationState.messages.map(message => ({...message}))
+}
 
 export const sendMessage = (message) => {
     const fetchOptions = {
