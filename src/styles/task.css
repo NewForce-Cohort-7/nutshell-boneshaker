@@ -1,29 +1,33 @@
 body {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box;}
 
+.allTaskComponents {
+  display: flex;
+}
+
 /* Button used to open the contact form - fixed at the bottom of the page */
  .open-button {
+  display: flex;
+  justify-content: center;
   background-color: #555;
   color: white;
   padding: 16px 20px;
   border: none;
   cursor: pointer;
   opacity: 0.8;
-  position: fixed;
-  bottom: 23px;
-  left: 45px;
+  margin-bottom: 23px;
+  margin-left: 45px;
   width: 280px;
   font-weight: 500;
 }
 
 /* The popup form - hidden by default */
 .form-popup {
-  /* display: none; */
-  position: fixed;
-  bottom: 0;
-  left: 32px;
+  display: flex;
+  max-width: 305px;
+  margin-bottom: 0;
+  margin-left: 32px;
   border: 3px solid #f1f1f1;
-  z-index: 9;
 } 
 
 /* Add styles to the form container */
