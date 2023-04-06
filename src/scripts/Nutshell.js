@@ -5,39 +5,42 @@ import { ArticleForm }from "./articleForm.js"
 import { Article } from "./article.js"
 import { addImageForm } from "./imageForm.js";
 import { ImagesCard } from "./image.js";
+import { Navbar } from "./navbar.js";
 
 
 
 export const Nutshell = () => {
       return `
-      <article id="formButtons">
-            ${addImageForm()}
-      </article>
-      ${taskComponent()}
-      <article id="chatMessages">
-            <section id="chatForm">
-                  <h2>Send a message!</h2>
-                  ${ ChatForm()}
-            </section>
-            <p>
-            <section id="articleForm">
-            <h2>New Articles</h2>
+      ${Navbar()}
+            <div class="d-flex flex-row">
+                  <div class="col-2">
                   ${ ArticleForm()}
-            </section>
-            <section id="currentArticles">
-            <h2>Article Feed</h2>
+                  //add Event Button/Form Function HERE
+                  ${taskComponent()}
+                  ${addImageForm()}
+                  </div>
+                  <div class="col-3">
+                        Events Print Function Go Here
+                        Tasks Print Function Go Here
+                  </div>
+                  <div class="col-3">
                   ${ Article()}
-            </section>
-            <p>
-            <section id="newMessages">
-                  <h2>New Messages</h2>
-                  ${Messages()}
-            </section>
-      </article>
-      <article id="images">
-            ${ImagesCard()}
-      </article>
-
-      `  
-      // Render all your UI components here
+                  </div>
+                  <div class="col-3">
+                        <article id="chatMessages">
+                              <section id="chatForm">
+                                    <h2>Send a message!</h2>
+                                          ${ ChatForm()}
+                              </section>
+                              <section id="newMessages">
+                                    <h2>New Messages</h2>
+                                          ${Messages()}
+                              </section>
+                        </article>
+                  </div>
+            </div>
+            <div class="row">
+                  ${ImagesCard()}
+            </div>
+      `
 }
