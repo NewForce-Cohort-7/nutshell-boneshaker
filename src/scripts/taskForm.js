@@ -1,4 +1,4 @@
-import { getTasks, deleteTask, fetchTaskToComplete, applicationState } from './dataAccess.js'
+import { getTasks, deleteTask, sendTaskToComplete } from './dataAccess.js'
 
 const toLi = (objectOrArray) => {
   let listItems = []
@@ -36,9 +36,9 @@ export const taskify = () => {
   }
 }
 
-document.addEventListener("change", e => {
-    if (e.target.id.startsWith("taskComplete--")) {
-        const [,targetId] = e.target.id.split("--")
-        deleteTask(parseInt(targetId))
-    }
-})
+// document.addEventListener("change", e => {
+//     if (e.target.id.startsWith("taskComplete--")) {
+//         const [,targetId] = e.target.id.split("--")
+//         deleteTask(parseInt(targetId))
+//     }
+// })
