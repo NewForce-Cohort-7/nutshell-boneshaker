@@ -1,0 +1,74 @@
+{
+  "article": [
+    {
+      "title": [
+        "Daily Dives"
+      ],
+      "synopsis": [
+        "She dove every day"
+      ],
+      "url": [
+        "www.dailydive.com"
+      ],
+      "timestamp": [
+        1680795904347
+      ],
+      "id": 4
+    }
+  ],
+  "messages": [
+    {
+      "username": "fiddleStix",
+      "chatMessage": "Playing scrabble at 8",
+      "id": 1
+    }
+  ],
+  "images": [],
+  "tasks": [
+    {
+      "id": [
+        1
+      ],
+      "taskName": [
+        "Organize"
+      ],
+      "dueDate": [
+        "2023-04-29"
+      ]
+    },
+    {
+      "id": [
+        2
+      ],
+      "taskName": [
+        ""
+      ],
+      "dueDate": [
+        ""
+      ]
+    },
+    {
+      "id": [
+        3
+      ],
+      "taskName": [
+        ""
+      ],
+      "dueDate": [
+        ""
+      ]
+    },
+    {
+      "id": [
+        4
+      ],
+      "taskName": [
+        ""
+      ],
+      "dueDate": [
+        ""
+      ]
+    }
+  ],
+  "tasksToComplete": []
+}
