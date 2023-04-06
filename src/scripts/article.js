@@ -1,5 +1,5 @@
 //Kara Hall
-import { getArticle, deleteArticle, fetchArticle, applicationState,  } from "./dataAccess.js";
+import { getArticle, deleteArticle, fetchArticle, applicationState  } from "./dataAccess.js";
 
 const dashboard = document.querySelector("#dashboard")
 
@@ -15,7 +15,7 @@ export const Article = () => {
     const article = getArticle()
 
     const convertArticleToListElement = (articleObject) => {
-        return `<p><strong>${articleObject.title}</strong>: ${articleObject.synopsis}
+        return `<p><strong>${articleObject.title}</strong>: ${articleObject.synopsis}, ${articleObject.url}, ${articleObject.timestamp}
 
         <button class="deleteArticle" id="article--${articleObject.id}"> Delete </button></p>
         

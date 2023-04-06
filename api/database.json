@@ -1,6 +1,29 @@
 {
-  "article": [],
-  "messages": [],
+  "article": [
+    {
+      "title": [
+        "Daily Dives"
+      ],
+      "synopsis": [
+        "She dove every day"
+      ],
+      "url": [
+        "www.dailydive.com"
+      ],
+      "timestamp": [
+        1680795904347
+      ],
+      "id": 4
+    }
+  ],
+  "messages": [
+    {
+      "username": "fiddleStix",
+      "chatMessage": "Playing scrabble at 8",
+      "id": 1
+    }
+  ],
+  "images": [],
   "tasks": [
     {
       "id": [
