@@ -12,6 +12,7 @@ mainContainer.addEventListener("click", click => {
     }
 })
 
+
 export const Messages = () => {
     const messages = getMessages()
 
