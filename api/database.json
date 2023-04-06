@@ -24,51 +24,6 @@
     }
   ],
   "images": [],
-  "tasks": [
-    {
-      "id": [
-        1
-      ],
-      "taskName": [
-        "Organize"
-      ],
-      "dueDate": [
-        "2023-04-29"
-      ]
-    },
-    {
-      "id": [
-        2
-      ],
-      "taskName": [
-        ""
-      ],
-      "dueDate": [
-        ""
-      ]
-    },
-    {
-      "id": [
-        3
-      ],
-      "taskName": [
-        ""
-      ],
-      "dueDate": [
-        ""
-      ]
-    },
-    {
-      "id": [
-        4
-      ],
-      "taskName": [
-        ""
-      ],
-      "dueDate": [
-        ""
-      ]
-    }
-  ],
+  "tasks": [],
   "tasksToComplete": []
 }
