@@ -3,7 +3,8 @@ export const applicationState = {
     messages: [],
     tasks: [],
     tasksToComplete: [],
-    images:[]
+    images:[],
+    events:[]
 }
 const API = "http://localhost:8088"
 export const fetchEvents = () => {

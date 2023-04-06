@@ -1,10 +1,9 @@
 // Created by Kiersten White
 
-import { getMessages, deleteMessage } from "./dataacess.js";
+import { getMessages, deleteMessage } from "./dataAccess.js";
 
 const mainContainer = document.querySelector("#dashboard")
 
-//Event Listener for Chat Delete Button - when it is clicked, it will take the chat associated with the chatId and ???
 mainContainer.addEventListener("click", click => {
     if (click.target.id.startsWith("message--")) {
         const [,messageId] = click.target.id.split("--")

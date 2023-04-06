@@ -1,4 +1,4 @@
-import { saveEvent } from "./dataaccess.js"
+import { saveEvent } from "./dataAccess.js"
 const mainContainer = document.querySelector("#dashboard")
 export const eventForm = () => {
     let html = `
@@ -28,17 +28,16 @@ export const eventForm = () => {
     `
     return html
 }
-//const mainContainer = document.querySelector("#dashboard")
+
 console.log (mainContainer)
 mainContainer.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "saveEvent") {
-        // Get what the user typed into the form fields
         const userEvent = document.querySelector("input[name='eventName']").value
         const userDate = document.querySelector("input[name='eventDate']").value
         const userLocation = document.querySelector("input[name='eventLocation']").value
         const userTime = document.querySelector("input[name='eventTime']").value
         const  userDescription= document.querySelector("input[name='eventDescription']").value
-        // Make an object out of the user input
+
         const dataToSendToAPI = {
             name: userEvent,
             eventDate:userDate,
@@ -46,7 +45,7 @@ mainContainer.addEventListener("click", clickEvent => {
             eventTime: userTime,
             description: userDescription
         }
-        // Send the data to the API for permanent storage
+ 
         saveEvent(dataToSendToAPI)
         mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
     }
