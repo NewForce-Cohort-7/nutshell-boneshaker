@@ -1,4 +1,4 @@
-
+//Kara Hall
 import { getArticle, deleteArticle, fetchArticle, applicationState,  } from "./dataAccess.js";
 
 const dashboard = document.querySelector("#dashboard")

@@ -1,3 +1,4 @@
+//Author: Kara Hall
 import { saveArticle } from "./dataAccess.js";
 
 export const ArticleForm = () => {
