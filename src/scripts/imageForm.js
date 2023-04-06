@@ -61,6 +61,9 @@ export const addImageForm = () => {
         }
         })
 
-        
-        // const username = document.querySelector("input[name='username']").value
-        // const chatMessage = document.querySelector("input[name='chatMessage']").value
+        document.addEventListener("click", e => {
+ 
+            if(e.target.id === "closeButton"){
+             document.querySelector(".image-form-popup").setAttribute("hidden", "")
+            }
+           })
