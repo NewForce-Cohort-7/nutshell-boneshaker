@@ -1,23 +1,27 @@
-import { saveArticle } from "./dataAccess.js";
+//Author: Kara Hall
+import { saveArticle, applicationState } from "./dataAccess.js";
 
 export const ArticleForm = () => {
     let html = `
-    <button id="new-article-button">New Article</button>
 
+    <div hidden class="article-form-popup" id="articleForm">
+      <form class="form-container">
+        <h1>New Article</h1>
+        <p>Be a journalist!</p>
 
+        <label for="title"><b>Title:</b></label>
+        <input type="text" id="title" placeholder="Input your title...">
 
-<form id="article-form">
-    <label for="title">Title:</label>
-    <input type="text" id="title" name="articleTitle" required>
-
-    <label for="synopsis">Synopsis:</label>
-    <textarea id="synopsis" name="articleSynopsis" required></textarea>
-
-    <label for="url">URL:</label>
-    <input type="text" id="url" name="articleUrl" required>
-
-    <button class="article__save" id="saveArticle">Save Article</button>
- </form>
+        <label for="synopsis"><b>Synopsis</b></label>
+        <input type="text" id="synopsis" placeholder="Begin typing your synopsis here...">
+        <label for="url"><b>URL</b></label>
+        <input type="text" id="url" placeholder="URL...">
+        
+        <button type="button" class="btn" id="saveArticle">Save Article</button>
+        <button type="button" class="btn cancel" id="closeButton">Close</button>
+        </form>
+                    </div>
+        <button class="article-open-button" id="openArticleButton">Add Article</button>
 
      `
      
@@ -26,23 +30,47 @@ export const ArticleForm = () => {
 // dashboard variable targets the <article id="dashboard"> in index.html
 const dashboard = document.querySelector("#dashboard")
 
+document.addEventListener("click", e => {
+
+    if(e.target.id === "openArticleButton"){
+      document.querySelector(".article-form-popup").removeAttribute("hidden")
+    }
+   
+})
+
 // Listens for the Save Article button to be clicked, takes the data and sends that data to be stored in the API
-dashboard.addEventListener("click", clickEvent => {
-    if (clickEvent.target.id === "saveArticle") {
-        
-        const articleTitle = document.querySelector("#title").value
-        const articleSynopsis = document.querySelector("#synopsis").value
-        const articleUrl = document.querySelector("#url").value
+    dashboard.addEventListener("click", clickEvent => {
+        if (clickEvent.target.id === "saveArticle") {
+            
+            const title = document.querySelector("#title").value
+            const synopsis = document.querySelector("#synopsis").value
+            const url = document.querySelector("#url").value
+            const currentDate = new Date();
+            const timestamp = currentDate.getTime();
 
-        const dataToSendToAPI = {
-            title: [articleTitle],
-            synopsis: [articleSynopsis],
-            url: [articleUrl]
-        }
+            if (title === "" || synopsis === "" || url === "") {
+                alert("This is a required field!")
+            } else {
+                    document.querySelector(".article-form-popup").setAttribute("hidden", "")
 
-        saveArticle(dataToSendToAPI)
+
+                const dataToSendToAPI = {
+                    title: [title],
+                    synopsis: [synopsis],
+                    url: [url],
+                    timestamp: [timestamp]
+                }
+
+            saveArticle(dataToSendToAPI)
 
     }
-})
+}})
+
+document.addEventListener("click", e => {
+ 
+    if(e.target.id === "closeButton"){
+     document.querySelector(".article-form-popup").setAttribute("hidden", "")
+    }
+   })
 
 

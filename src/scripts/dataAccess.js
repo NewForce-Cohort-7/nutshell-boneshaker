@@ -3,12 +3,45 @@ export const applicationState = {
     messages: [],
     tasks: [],
     tasksToComplete: [],
-    images:[]
+    images:[],
+    events:[]
 }
+const API = "http://localhost:8088"
+export const fetchEvents = () => {
+    return fetch(`${API}/events`)
+        .then(response => response.json())
+        .then(
+            (eventInput) => {
+        
+                applicationState.events = eventInput
+            }
+        )
+}
+export const getEvents = () => {
+    return applicationState.events.map(events => ({ ...events}))
+}
+export const saveEvent = (userEventRequest) => {
+
+body: JSON.stringify(userEventRequest)
+
+return fetch(`${API}/events`, fetchOptions)
+    .then(response => response.json())
+    .then(() => {
+        mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+    })
+ }
+
 
 const dashboard = document.querySelector("#dashboard")
-const API = "http://localhost:8088"
 
+export const deleteEvent = (id) => {
+    return fetch(`${API}/events/${id}`, { method: "DELETE" })
+    .then(
+        () => {
+            mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+        }
+        )
+    }
 // Created by Kiersten White
 
 // Exports function that fetches chat messages
@@ -25,7 +58,6 @@ export const fetchMessages = () => {
 export const getMessages = () => {
     return applicationState.messages.map(message => ({...message}))
 }
-
 
 export const sendMessage = (message) => {
     const fetchOptions = {
